@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Workout | Gym Workout Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Gym Workout Tracker home">
+        <span class="brand-mark" aria-hidden="true">GT</span>
+        <span>Gym Tracker</span>
+      </a>
+      <div class="nav-links">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link active" href="add-workout.html" aria-current="page">Add Workout</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="app-shell narrow">
+    <section class="dashboard-head" aria-labelledby="form-title">
+      <div>
+        <p class="eyebrow">New Entry</p>
+        <h1 id="form-title">Add Workout</h1>
+      </div>
+      <a class="ghost-button" href="index.html">View Workouts</a>
+    </section>
+
+    <form id="workoutForm" class="form-panel" novalidate>
+      <div id="formStatus" class="form-status" role="status"></div>
+
+      <div class="form-grid">
+        <label>
+          <span>Workout Name</span>
+          <input id="name" name="name" type="text" maxlength="80" placeholder="Leg Day Strength" required>
+          <small class="field-error" data-error-for="name"></small>
+        </label>
+
+        <label>
+          <span>Category</span>
+          <select id="category" name="category" required>
+            <option value="">Choose category</option>
+            <option value="Strength">Strength</option>
+            <option value="Cardio">Cardio</option>
+            <option value="Mobility">Mobility</option>
+            <option value="HIIT">HIIT</option>
+            <option value="Recovery">Recovery</option>
+          </select>
+          <small class="field-error" data-error-for="category"></small>
+        </label>
+
+        <label>
+          <span>Muscle Group</span>
+          <input id="muscle_group" name="muscle_group" type="text" maxlength="40" placeholder="Legs" required>
+          <small class="field-error" data-error-for="muscle_group"></small>
+        </label>
+
+        <label>
+          <span>Date</span>
+          <input id="date" name="date" type="date" required>
+          <small class="field-error" data-error-for="date"></small>
+        </label>
+
+        <label>
+          <span>Duration</span>
+          <input id="duration_minutes" name="duration_minutes" type="number" min="1" max="300" placeholder="45" required>
+          <small class="field-error" data-error-for="duration_minutes"></small>
+        </label>
+
+        <label>
+          <span>Intensity</span>
+          <select id="intensity" name="intensity" required>
+            <option value="">Choose intensity</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
+          <small class="field-error" data-error-for="intensity"></small>
+        </label>
+
+        <label>
+          <span>Sets</span>
+          <input id="sets" name="sets" type="number" min="0" max="100" placeholder="12">
+          <small class="field-error" data-error-for="sets"></small>
+        </label>
+
+        <label>
+          <span>Reps</span>
+          <input id="reps" name="reps" type="number" min="0" max="500" placeholder="10">
+          <small class="field-error" data-error-for="reps"></small>
+        </label>
+
+        <label>
+          <span>Calories</span>
+          <input id="calories" name="calories" type="number" min="0" max="3000" placeholder="420">
+          <small class="field-error" data-error-for="calories"></small>
+        </label>
+      </div>
+
+      <label class="notes-field">
+        <span>Notes</span>
+        <textarea id="notes" name="notes" maxlength="240" rows="4" placeholder="Exercises, PRs, warm-up details"></textarea>
+        <small class="field-error" data-error-for="notes"></small>
+      </label>
+
+      <div class="form-actions">
+        <button class="ghost-button" type="reset">Clear</button>
+        <button class="primary-action" type="submit">Save Workout</button>
+      </div>
+    </form>
+  </main>
+
+  <script src="add-workout.js"></script>
+</body>
+</html>
